@@ -67,10 +67,12 @@ Feature Importance
 
 1.	Below is the graph showing the most important features in catboost model creation
  
+![image](https://user-images.githubusercontent.com/23581231/142860430-349b2249-7983-4e14-8013-e3f172d01371.png)
 
 
 2.	Below is the graph showing the most important features in lightgbm model creation
  
+![image](https://user-images.githubusercontent.com/23581231/142860467-11414f8c-3edc-45ab-a874-d77dd84635dd.png)
 
 
 
