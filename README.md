@@ -1,14 +1,16 @@
-Problem Statement
+**Problem Statement**
 Given the :-
 1. Demographics of the employee (city, age, gender etc.)
 2. Tenure information (joining date, Last Date)
 3. Historical data regarding the performance of the employee (Quarterly rating, Monthly business acquired, designation, salary)
 We need to find if the employee will leave the organization in next 6 months.
 
-Approach
+**Approach**
+
 We will be training the model to capture the information about the employee’s attrition 6 months prior to the last working date. Below approach in the feature engineering, test set creation and modeling has been used:-
 1.	Feature Engineer
 Since there is no target variable for our classification. We need to engineer the target variable from the the LastWorkingDate given for the employee. And also feature new variables from the given data. Below data processing has been done to create the final list of features:-
+
 i.	Vintage
 It is the amount of time (in days) that the employee has spent in the organization. It was calculated with formula:-
 Vintage = MMM-YY(reporting date) – DateOfJoining
@@ -39,9 +41,11 @@ Target value 1 is calculated by marking last 6 reported employee’s data as 1. 
 
 
 2.	Train Test Split Data
+
 All the employees who have not left the organization, last 6 months records needs to be moved to the test file. Since we are not sure if the employee will be leaving the organization in the next six months. We are not sure that the Target for those rows will be 1 or 0. They are actually the test data whose predictions will be used for the final submission.
 
 3.	Modelling
+
 Data was trained on 3 models:-
 i.	Random Forest
 ii.	CatBoost
@@ -51,6 +55,7 @@ Now since we have 6 records for each employee in the test data giving us the pro
 After tuning the threshold for the probability finally we got the best result at 0.43. Therefore any probability >= 0.43 will be given the target as 1(saying the employee will leave the organization within next 6 months).
 
 Feature Importance
+
 1.	Below is the graph showing the most important features in catboost model creation
  
 
